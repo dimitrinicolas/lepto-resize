@@ -1,0 +1,24 @@
+{
+  "name": "lepto-resize",
+  "version": "1.0.0",
+  "description": "Lepto plugin for resizing images and create retinas",
+  "main": "lepto-resize.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimitrinicolas/lepto-resize.git"
+  },
+  "keywords": [
+    "lepto",
+    "resize",
+    "retina"
+  ],
+  "author": "Dimitri NICOLAS",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dimitrinicolas/lepto-resize/issues"
+  },
+  "homepage": "https://github.com/dimitrinicolas/lepto-resize#readme",
+  "dependencies": {
+    "sharp": "^0.20.3"
+  }
+}
