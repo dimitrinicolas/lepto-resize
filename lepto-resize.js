@@ -1,10 +1,5 @@
-const sharp = require('sharp');
-
 const resize = (opts={}) => {
   const kernelOption = {};
-  if (opts.kernel) {
-    kernelOption.kernel = sharp.kernel[opts.kernel];
-  }
   const retinaPrefix = typeof opts.prefix !== 'undefined' ? opts.prefix : '@';
   const retinaSuffix = typeof opts.suffix !== 'undefined' ? opts.suffix : 'x';
 
@@ -16,6 +11,10 @@ const resize = (opts={}) => {
         fulfill(input);
       }
     };
+
+    if (opts.kernel) {
+      kernelOption.kernel = utils.sharp.kernel[opts.kernel];
+    }
 
     if (Array.isArray(opts.retina)) {
       for (let i = 0, l = input.outputs.length; i < l; i++) {
@@ -59,7 +58,7 @@ const resize = (opts={}) => {
         width = typeof width === 'number' ? width * input.outputs[i].retina : width;
         height = typeof height === 'number' ? height * input.outputs[i].retina : height;
       }
-      sharp(input.outputs[i].buffer)
+      utils.sharp(input.outputs[i].buffer)
         .resize(width, height, kernelOption)
         .toBuffer()
         .then(function(i) {
