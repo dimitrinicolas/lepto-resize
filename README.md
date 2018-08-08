@@ -37,7 +37,7 @@ To generate retina alternatives, simply add the `retina` option like this: `"ret
 The simplest solution to employ retina resources is to use the `<pictures>` tag:
 
 ```html
-<img srcset="assets/output/image@2x.jpg,
+<img srcset="assets/output/image.jpg,
              assets/output/image@2x.jpg 2x,
              assets/output/image@3x.jpg 3x"
      src="assets/output/image.jpg" alt="">
